@@ -1,5 +1,4 @@
 node_modules/
-test-fixtures/node_modules/
 *.log
 dist/
 # Android build output and secrets — never commit the signing key
@@ -12,7 +11,3 @@ android/keystore.properties
 *.jks
 *.keystore
 .idea/
-.claude/
-tap.sh
-shot.py
-.capture/
