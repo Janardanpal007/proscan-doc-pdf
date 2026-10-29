@@ -1,0 +1,9 @@
+{
+  "appId": "com.proscan.docpdf",
+  "appName": "ProScan : Doc, PDF",
+  "webDir": "www",
+  "android": {
+    "backgroundColor": "#08080b",
+    "allowMixedContent": false
+  }
+}

@@ -1,0 +1,17 @@
+node_modules/
+test-fixtures/node_modules/
+*.log
+dist/
+# Android build output and secrets — never commit the signing key
+android/.gradle/
+android/build/
+android/app/build/
+android/capacitor-cordova-android-plugins/build/
+android/local.properties
+android/keystore.properties
+*.jks
+*.keystore
+.idea/
+.claude/
+tap.sh
+shot.py

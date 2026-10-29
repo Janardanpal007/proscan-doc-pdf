@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ProScan : Doc, PDF — Scan, convert, edit &amp; sign on Android</title>
+<meta name="description" content="ProScan is a free Android document scanner and PDF toolkit: scan to PDF, QR & barcodes, Word/Excel/PPT to PDF, edit, sign, watermark, merge, compress, lock. Everything runs on your phone.">
+<meta name="author" content="Janardan / TSE">
+<meta name="theme-color" content="#08080b">
+<meta property="og:title" content="ProScan : Doc, PDF">
+<meta property="og:description" content="Scan, convert, edit and sign documents on Android — all on-device.">
+<meta property="og:image" content="img/icon.png">
+<link rel="icon" href="img/icon.png">
+<style>
+  :root {
+    --bg: #08080b; --card: #141418; --card2: #1d1d23; --line: #26262e; --text: #f5f5f7; --muted: #8d8d99; --lime: #c6ff3d;
+    --neon: linear-gradient(100deg, #a855f7 0%, #ff4fd8 22%, #ffd23f 48%, #3dffa2 72%, #38bdf8 100%);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height: 1.55; letter-spacing: -.01em; }
+  a { color: inherit; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(8, 8, 11, .8); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; gap: 12px; height: 64px; }
+  nav img { width: 34px; height: 34px; border-radius: 9px; }
+  .brand { font-weight: 800; font-size: 19px; background: var(--neon); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  nav .sp { flex: 1; }
+  nav a.l { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 14px; }
+  nav a.l:hover { color: var(--text); }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px; font-weight: 700; text-decoration: none; transition: transform .15s; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.primary { background: var(--lime); color: #0a0a0c; box-shadow: 0 0 30px rgba(198, 255, 61, .35); }
+  .btn.ghost { position: relative; background: var(--card2); }
+  .btn.ghost::before, .glow::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: var(--neon);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+  .btn.sm { padding: 9px 16px; font-size: 14px; }
+  svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  header.hero { padding: 72px 0 40px; position: relative; overflow: hidden; }
+  header.hero::after { content: ""; position: absolute; left: 50%; top: 40%; width: 760px; height: 360px; transform: translateX(-50%); background: var(--neon); filter: blur(140px); opacity: .18; z-index: -1; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px 6px 6px; font-size: 13px; font-weight: 600; color: #ddd; }
+  .tog { width: 32px; height: 19px; border-radius: 10px; background: var(--lime); position: relative; }
+  .tog::after { content: ""; position: absolute; width: 13px; height: 13px; border-radius: 50%; background: #0a0a0c; top: 3px; right: 3px; }
+  h1 { font-size: clamp(38px, 6vw, 64px); line-height: 1.04; margin: 18px 0 16px; letter-spacing: -.035em; }
+  h1 .n { background: var(--neon); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lead { color: #b9b9c4; font-size: 18px; max-width: 540px; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; margin: 28px 0 14px; }
+  .fine { color: var(--muted); font-size: 13px; }
+  .phones { position: relative; height: 560px; }
+  .phone { position: absolute; width: 240px; border-radius: 34px; padding: 8px; background: #000; border: 1px solid #2a2a33; box-shadow: 0 30px 80px rgba(0, 0, 0, .6); }
+  .phone img { width: 100%; display: block; border-radius: 26px; }
+  .phone.a { left: 8%; top: 20px; transform: rotate(-6deg); }
+  .phone.b { right: 4%; top: 60px; transform: rotate(5deg); }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 40px 0 10px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 18px; }
+  .stat b { display: block; font-size: 30px; letter-spacing: -.03em; }
+  .stat span { color: var(--muted); font-size: 13px; font-weight: 600; }
+  .bar { height: 6px; border-radius: 3px; background: var(--card2); margin-top: 12px; overflow: hidden; }
+  .bar i { display: block; height: 100%; background: var(--neon); }
+
+  section { padding: 64px 0; }
+  h2 { font-size: clamp(28px, 4vw, 40px); letter-spacing: -.03em; margin: 0 0 10px; }
+  .sub { color: var(--muted); margin: 0 0 32px; max-width: 620px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .feat { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 22px; }
+  .ring { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--c);
+    background: color-mix(in srgb, var(--c) 13%, transparent); box-shadow: inset 0 0 0 2px var(--c), 0 0 18px color-mix(in srgb, var(--c) 35%, transparent); margin-bottom: 14px; }
+  .feat h3 { margin: 0 0 8px; font-size: 18px; }
+  .feat ul { margin: 0; padding-left: 18px; color: #b9b9c4; font-size: 14.5px; }
+  .feat li { margin: 3px 0; }
+
+  .shots { display: flex; gap: 16px; overflow-x: auto; padding: 6px 2px 18px; scroll-snap-type: x mandatory; }
+  .shots figure { margin: 0; flex: 0 0 220px; scroll-snap-align: start; }
+  .shots img { width: 100%; border-radius: 22px; border: 1px solid var(--line); display: block; }
+  .shots figcaption { color: var(--muted); font-size: 13px; font-weight: 600; text-align: center; margin-top: 8px; }
+
+  .dl { position: relative; border-radius: 30px; padding: 36px; background: radial-gradient(120% 120% at 50% 0%, #22222b, #111115 60%); text-align: center; overflow: hidden; }
+  .dl::after { content: ""; position: absolute; left: 15%; right: 15%; bottom: -80px; height: 120px; background: var(--neon); filter: blur(60px); opacity: .35; }
+  .dl > * { position: relative; z-index: 1; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; text-align: left; margin-top: 26px; }
+  .step { background: rgba(255, 255, 255, .04); border-radius: 18px; padding: 16px; font-size: 14px; color: #c9c9d2; }
+  .step b { display: block; color: var(--lime); font-size: 13px; margin-bottom: 4px; }
+  .banner { display: flex; align-items: center; gap: 16px; border-radius: 24px; padding: 20px 22px; background: linear-gradient(120deg, #ff8a00, #ffb800 55%, #ffd96a); color: #1a1000; margin-top: 16px; }
+  .banner .bi { width: 52px; height: 52px; border-radius: 16px; background: rgba(0, 0, 0, .85); color: var(--lime); display: flex; align-items: center; justify-content: center; flex: none; }
+  .banner .bi svg { width: 26px; height: 26px; }
+  .banner b { font-size: 16px; }
+  .banner p { margin: 2px 0 0; font-size: 14px; opacity: .8; }
+  .banner .sp { flex: 1; }
+  .banner a { background: #0a0a0c; color: #fff; }
+  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+  footer b { color: var(--lime); }
+
+  @media (max-width: 880px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .phones { height: 470px; }
+    .phone { width: 200px; }
+    .grid, .steps { grid-template-columns: 1fr 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    nav a.l { display: none; }
+  }
+  @media (max-width: 560px) {
+    .grid, .steps { grid-template-columns: 1fr; }
+    .phone { width: 170px; }
+    .phones { height: 400px; }
+    .banner { flex-wrap: wrap; }
+    .dl { padding: 26px 18px; }
+  }
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <img src="img/icon.png" alt="ProScan icon"><span class="brand">ProScan</span><span class="sp"></span>
+  <a class="l" href="#features">Features</a><a class="l" href="#screens">Screens</a><a class="l" href="#download">Download</a>
+  <a class="btn primary sm" href="https://github.com/Janardanpal007/proscan-doc-pdf/releases/latest/download/ProScan-Doc-PDF-v1.0.apk">Get APK</a>
+</div></nav>
+
+<header class="hero"><div class="wrap hero-grid">
+  <div>
+    <span class="pill"><span class="tog"></span>Free · No account · Works offline</span>
+    <h1>Scan, convert, edit &amp; sign — <span class="n">right on your phone.</span></h1>
+    <p class="lead">ProScan turns your Android camera into a document scanner and puts a complete PDF toolkit in your pocket. Every file is processed on your device — nothing is uploaded.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/Janardanpal007/proscan-doc-pdf/releases/latest/download/ProScan-Doc-PDF-v1.0.apk">
+        <svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download APK</a>
+      <a class="btn ghost" href="app/"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>Try it in your browser</a>
+    </div>
+    <div class="fine">Android 5.1+ · 4.8 MB · v1.0.0</div>
+  </div>
+  <div class="phones">
+    <div class="phone a"><img src="img/home.jpg" alt="ProScan home screen"></div>
+    <div class="phone b"><img src="img/crop.jpg" alt="Automatic document edge detection"></div>
+  </div>
+</div>
+<div class="wrap stats">
+  <div class="stat"><b>18+</b><span>Tools in one app</span><div class="bar"><i style="width:90%"></i></div></div>
+  <div class="stat"><b>0</b><span>Uploads — 100% on-device</span><div class="bar"><i style="width:100%"></i></div></div>
+  <div class="stat"><b>6</b><span>Formats converted</span><div class="bar"><i style="width:70%"></i></div></div>
+  <div class="stat"><b>4.8 MB</b><span>Download size</span><div class="bar"><i style="width:35%"></i></div></div>
+</div>
+</header>
+
+<section id="features"><div class="wrap">
+  <h2>Everything you need for documents</h2>
+  <p class="sub">The features of a desktop PDF suite, designed for one hand and a phone screen.</p>
+  <div class="grid">
+    <div class="feat"><div class="ring" style="--c:#c6ff3d"><svg viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10"/></svg></div>
+      <h3>Scan</h3><ul><li>Camera to PDF with live edge detection</li><li>Drag-to-adjust corners, perspective fix</li><li>Magic, Lighten, Grayscale, B&amp;W filters</li><li>Multi-page scans, reorder, retake</li></ul></div>
+    <div class="feat"><div class="ring" style="--c:#38bdf8"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM17 17h4v4h-4"/></svg></div>
+      <h3>QR &amp; Barcodes</h3><ul><li>Live camera or from a photo</li><li>Links, Wi-Fi (shows password), contacts</li><li>EAN, UPC, Code 128 and more</li><li>Scan history</li></ul></div>
+    <div class="feat"><div class="ring" style="--c:#ff4fd8"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></div>
+      <h3>Convert</h3><ul><li>Word ↔ PDF (editable .docx output)</li><li>Image ↔ PDF, export as ZIP</li><li>Excel to PDF</li><li>PowerPoint to PDF</li></ul></div>
+    <div class="feat"><div class="ring" style="--c:#ffd23f"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></div>
+      <h3>Edit &amp; Sign</h3><ul><li>Text, pen, highlight, shapes, arrows</li><li>Draw or type a signature, save it</li><li>Add images, move &amp; resize, undo</li><li>Watermarks with live preview</li></ul></div>
+    <div class="feat"><div class="ring" style="--c:#3dffa2"><svg viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg></div>
+      <h3>PDF Tools</h3><ul><li>Merge PDFs and images</li><li>Compress (up to 60–80% smaller)</li><li>Extract, split, reorder, rotate pages</li><li>Lock / unlock with AES-256</li></ul></div>
+    <div class="feat"><div class="ring" style="--c:#a855f7"><svg viewBox="0 0 24 24"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4H9l2 2.5h7.5A2.5 2.5 0 0 1 21 9v8.5a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/></svg></div>
+      <h3>File manager</h3><ul><li>Recents, search and sorting</li><li>Folders and favorites</li><li>Save to Downloads, share, print</li><li>Import any document</li></ul></div>
+  </div>
+  <div class="banner"><div class="bi"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+    <div class="sp"><b>Private by design</b><p>No sign-up, no cloud, no ads. Your documents never leave your phone.</p></div>
+    <a class="btn sm" href="#download">Get ProScan</a></div>
+</div></section>
+
+<section id="screens"><div class="wrap">
+  <h2>Real screens, real phone</h2>
+  <p class="sub">Captured on a Realme running Android 11.</p>
+  <div class="shots">
+    <figure><img src="img/home.jpg" alt="Home" loading="lazy"><figcaption>Home</figcaption></figure>
+    <figure><img src="img/camera.jpg" alt="Live edge detection" loading="lazy"><figcaption>Live edge detection</figcaption></figure>
+    <figure><img src="img/crop.jpg" alt="Adjust corners" loading="lazy"><figcaption>Adjust corners</figcaption></figure>
+    <figure><img src="img/enhance.jpg" alt="Enhance filters" loading="lazy"><figcaption>Enhance filters</figcaption></figure>
+    <figure><img src="img/signed.jpg" alt="Signed PDF" loading="lazy"><figcaption>Signed PDF</figcaption></figure>
+    <figure><img src="img/menu.jpg" alt="File actions" loading="lazy"><figcaption>File actions</figcaption></figure>
+    <figure><img src="img/print.jpg" alt="Print" loading="lazy"><figcaption>Print</figcaption></figure>
+    <figure><img src="img/about.jpg" alt="Settings and about" loading="lazy"><figcaption>Settings &amp; about</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="download"><div class="wrap">
+  <div class="dl glow">
+    <h2>Get ProScan for Android</h2>
+    <p class="sub" style="margin:0 auto 22px">Free download. Version 1.0.0 · 4.8 MB · Android 5.1 and newer.</p>
+    <a class="btn primary" href="https://github.com/Janardanpal007/proscan-doc-pdf/releases/latest/download/ProScan-Doc-PDF-v1.0.apk">
+      <svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download APK</a>
+    <div class="steps">
+      <div class="step"><b>1 · Download</b>Tap the button above on your Android phone.</div>
+      <div class="step"><b>2 · Allow install</b>When asked, allow your browser to install apps from this source.</div>
+      <div class="step"><b>3 · Open ProScan</b>Allow camera access and start scanning.</div>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>ProScan : Doc, PDF — built by <b>Janardan / TSE</b></span>
+  <span><a href="https://github.com/Janardanpal007/proscan-doc-pdf">Source on GitHub</a> · <a href="https://github.com/Janardanpal007/proscan-doc-pdf/releases">Releases</a></span>
+</div></footer>
+</body>
+</html>

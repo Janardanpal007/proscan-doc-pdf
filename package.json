@@ -1,0 +1,30 @@
+{
+  "name": "milliscan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@cantoo/pdf-lib": "^2.11.1",
+    "@capacitor/android": "^6.2.1",
+    "@capacitor/cli": "^6.2.1",
+    "@capacitor/core": "^6.2.1",
+    "@pdf-lib/fontkit": "^1.1.1",
+    "@zxing/library": "^0.21.3",
+    "docx": "^9.5.1",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.8.2",
+    "jszip": "^3.10.1",
+    "mammoth": "^1.8.0",
+    "pdfjs-dist": "^3.11.174",
+    "qrcode-generator": "^1.4.4",
+    "xlsx": "^0.18.5"
+  }
+}
