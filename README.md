@@ -5,7 +5,7 @@
 **[⬇ Download the APK](https://github.com/Janardanpal007/proscan-doc-pdf/releases/latest/download/ProScan-Doc-PDF-v1.0.apk)** · **[Website](https://janardanpal007.github.io/proscan-doc-pdf/)** · **[Try it in your browser](https://janardanpal007.github.io/proscan-doc-pdf/app/)**
 
 <p>
-<img src="docs/img/home.jpg" width="200"> <img src="docs/img/crop.jpg" width="200"> <img src="docs/img/enhance.jpg" width="200"> <img src="docs/img/signed.jpg" width="200">
+<img src="docs/img/cards/01_camera.jpg" width="200"> <img src="docs/img/cards/02_enhance.jpg" width="200"> <img src="docs/img/cards/03_sign.jpg" width="200"> <img src="docs/img/cards/05_tools.jpg" width="200">
 </p>
 
 ## Features

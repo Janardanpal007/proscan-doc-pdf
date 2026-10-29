@@ -15,3 +15,4 @@ android/keystore.properties
 .claude/
 tap.sh
 shot.py
+.capture/

@@ -73,7 +73,9 @@
   .feat li { margin: 3px 0; }
 
   .shots { display: flex; gap: 16px; overflow-x: auto; padding: 6px 2px 18px; scroll-snap-type: x mandatory; }
-  .shots figure { margin: 0; flex: 0 0 220px; scroll-snap-align: start; }
+  .shots figure { margin: 0; flex: 0 0 200px; scroll-snap-align: start; }
+  .shots.cards figure { flex: 0 0 260px; }
+  .shots.cards img { border: 0; border-radius: 26px; box-shadow: 0 18px 40px rgba(0,0,0,.45); }
   .shots img { width: 100%; border-radius: 22px; border: 1px solid var(--line); display: block; }
   .shots figcaption { color: var(--muted); font-size: 13px; font-weight: 600; text-align: center; margin-top: 8px; }
 
@@ -131,8 +133,8 @@
     <div class="fine">Android 5.1+ · 4.8 MB · v1.0.0</div>
   </div>
   <div class="phones">
-    <div class="phone a"><img src="img/home.jpg" alt="ProScan home screen"></div>
-    <div class="phone b"><img src="img/crop.jpg" alt="Automatic document edge detection"></div>
+    <div class="phone a"><img src="img/screens/home.jpg" alt="ProScan home screen"></div>
+    <div class="phone b"><img src="img/screens/crop.jpg" alt="Automatic document edge detection"></div>
   </div>
 </div>
 <div class="wrap stats">
@@ -166,17 +168,30 @@
 </div></section>
 
 <section id="screens"><div class="wrap">
-  <h2>Real screens, real phone</h2>
-  <p class="sub">Captured on a Realme running Android 11.</p>
+  <h2>See it in action</h2>
+  <p class="sub">Scan, enhance, sign, convert and organize — swipe through.</p>
+  <div class="shots cards">
+    <figure><img src="img/cards/01_camera.jpg" alt="Scan in 1 tap" loading="lazy"></figure>
+    <figure><img src="img/cards/02_enhance.jpg" alt="Crystal-clear scans" loading="lazy"></figure>
+    <figure><img src="img/cards/03_sign.jpg" alt="Sign anywhere" loading="lazy"></figure>
+    <figure><img src="img/cards/04_convert.jpg" alt="Office to PDF" loading="lazy"></figure>
+    <figure><img src="img/cards/05_tools.jpg" alt="18+ tools" loading="lazy"></figure>
+    <figure><img src="img/cards/06_qr.jpg" alt="QR & barcodes" loading="lazy"></figure>
+    <figure><img src="img/cards/07_home.jpg" alt="Organized" loading="lazy"></figure>
+    <figure><img src="img/cards/08_about.jpg" alt="Private by design" loading="lazy"></figure>
+  </div>
+  <h3 style="margin:34px 0 12px;font-size:20px">Every screen</h3>
   <div class="shots">
-    <figure><img src="img/home.jpg" alt="Home" loading="lazy"><figcaption>Home</figcaption></figure>
-    <figure><img src="img/camera.jpg" alt="Live edge detection" loading="lazy"><figcaption>Live edge detection</figcaption></figure>
-    <figure><img src="img/crop.jpg" alt="Adjust corners" loading="lazy"><figcaption>Adjust corners</figcaption></figure>
-    <figure><img src="img/enhance.jpg" alt="Enhance filters" loading="lazy"><figcaption>Enhance filters</figcaption></figure>
-    <figure><img src="img/signed.jpg" alt="Signed PDF" loading="lazy"><figcaption>Signed PDF</figcaption></figure>
-    <figure><img src="img/menu.jpg" alt="File actions" loading="lazy"><figcaption>File actions</figcaption></figure>
-    <figure><img src="img/print.jpg" alt="Print" loading="lazy"><figcaption>Print</figcaption></figure>
-    <figure><img src="img/about.jpg" alt="Settings and about" loading="lazy"><figcaption>Settings &amp; about</figcaption></figure>
+    <figure><img src="img/screens/home.jpg" alt="Home" loading="lazy"><figcaption>Home</figcaption></figure>
+    <figure><img src="img/screens/camera.jpg" alt="Live edge detection" loading="lazy"><figcaption>Live edge detection</figcaption></figure>
+    <figure><img src="img/screens/crop.jpg" alt="Auto-crop" loading="lazy"><figcaption>Auto-crop</figcaption></figure>
+    <figure><img src="img/screens/enhance.jpg" alt="Enhance filters" loading="lazy"><figcaption>Enhance filters</figcaption></figure>
+    <figure><img src="img/screens/sign.jpg" alt="Sign & annotate" loading="lazy"><figcaption>Sign & annotate</figcaption></figure>
+    <figure><img src="img/screens/files.jpg" alt="File manager" loading="lazy"><figcaption>File manager</figcaption></figure>
+    <figure><img src="img/screens/tools.jpg" alt="All tools" loading="lazy"><figcaption>All tools</figcaption></figure>
+    <figure><img src="img/screens/convert.jpg" alt="Convert" loading="lazy"><figcaption>Convert</figcaption></figure>
+    <figure><img src="img/screens/qr.jpg" alt="QR scanner" loading="lazy"><figcaption>QR scanner</figcaption></figure>
+    <figure><img src="img/screens/about.jpg" alt="Settings & about" loading="lazy"><figcaption>Settings & about</figcaption></figure>
   </div>
 </div></section>
 
